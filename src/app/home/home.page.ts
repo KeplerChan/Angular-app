@@ -12,4 +12,5 @@ export class HomePage {
   gotoS3() {  
     this.router.navigate(['s3']);  
   }  /*https://www.javatpoint.com/ionic-navigation-and-routing*/
+
 }  
