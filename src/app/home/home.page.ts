@@ -40,7 +40,5 @@ export class HomePage {
 
     await alert.present();
   }
-  
-  /*https://www.javatpoint.com/ionic-navigation-and-routing*/
 
 }  
