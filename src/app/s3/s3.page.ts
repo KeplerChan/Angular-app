@@ -47,7 +47,7 @@ export class S3Page implements OnInit {
   goBack() {  
     this.router.navigate(['home']);  
   } 
-  goS4(){
-    
+  checkDetails(){
+    this.router.navigate(['s4'])
   }
 }

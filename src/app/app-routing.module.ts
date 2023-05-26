@@ -14,7 +14,11 @@ const routes: Routes = [
   {
     path: 's3',
     loadChildren: () => import('./s3/s3.module').then( m => m.S3PageModule)
+  },  {
+    path: 's4',
+    loadChildren: () => import('./s4/s4.module').then( m => m.S4PageModule)
   },
+
 ];
 
 @NgModule({

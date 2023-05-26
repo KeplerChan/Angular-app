@@ -4,7 +4,7 @@
 <ion-content [fullscreen]="true">
   <ion-button (click)="goBack()">Back</ion-button>
   <div *ngFor ="let item of ob; let i = index">
-    <button class="RRbutton" role="button">{{item.activityTime}} 
+    <button class="RRbutton" role="button" (click)="checkDetails()">{{item.activityTime}} 
       Distance {{item.distance.toFixed(1)}} km 
       Pacing {{item.pacing.toFixed(2)}} 
       duration {{item.duration.toFixed(1)}} min </button>
