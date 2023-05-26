@@ -1,19 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { Injectable } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
+import { Router } from '@angular/router';  
+
 @Component({
-  selector: 'app-s3',
+  selector: 'apps3',
   templateUrl: './s3.page.html',
   styleUrls: ['./s3.page.scss'],
 })
 
 export class S3Page implements OnInit {
-  constructor(){
+  
+  constructor(private router: Router){
 
   }
+
   ngOnInit() {
   }
-
-}
-
-export class RunningRecord {
+  goBack() {  
+    this.router.navigate(['home']);  
+  }  
 }
