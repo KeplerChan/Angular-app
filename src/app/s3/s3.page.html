@@ -2,13 +2,11 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <!--  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">S3</ion-title>
-    </ion-toolbar>
-  </ion-header>-->
-  <h1>{{ob[0].activityTime}}</h1>
-  <h1>{{ob[1].activityTime}}</h1>
-  <h1>{{ob[2].activityTime}}</h1>
   <ion-button (click)="goBack()">Back</ion-button>
+  <div *ngFor ="let item of ob; let i = index">
+    <button class="RRbutton" role="button">{{item.activityTime}} 
+      Distance {{item.distance.toFixed(1)}} km 
+      Pacing {{item.pacing.toFixed(2)}} 
+      duration {{item.duration.toFixed(1)}} min </button>
+  </div>
 </ion-content>
