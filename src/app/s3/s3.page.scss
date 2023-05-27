@@ -1,7 +1,7 @@
 
 /* CSS */
 .RRbutton {
-  align-items: center;
+  
   background-color: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: .25rem;
@@ -39,10 +39,48 @@
   transform: translateY(-1px);
 }
 
-.button-6:active {
+.RRbutton-6:active {
   background-color: #F0F0F1;
   border-color: rgba(0, 0, 0, 0.15);
   box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
   color: rgba(0, 0, 0, 0.65);
   transform: translateY(0);
 }
+
+.title{
+  text-align: center;
+}
+
+.numRecords{
+  text-align: center;
+}
+
+.firstdivcol{
+
+  display: inline-block;
+  
+}
+
+.seconddivcol{
+
+  display: inline-block;
+  margin: 5px 5px;
+}
+
+.wrapper{
+
+  flex-direction: row;
+}
+
+.date{
+  position:absolute;
+  left:0;
+  top:0;
+}
+
+.time{
+  position:absolute;
+  right:0;
+  top:0;
+}
+

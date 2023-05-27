@@ -1,12 +1,32 @@
 <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="title">
+      Your running records
+    </ion-title>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <div class ="typesetting">
   <ion-button (click)="goBack()">Back</ion-button>
+  <h1 class="numRecords"> Total records:{{ob.length}}</h1>
   <div *ngFor ="let item of ob; let i = index">
-    <button class="RRbutton" role="button" (click)="checkDetails()">{{item.activityTime}} 
-      Distance {{item.distance.toFixed(1)}} km 
-      Pacing {{item.pacing.toFixed(2)}} 
-      duration {{item.duration.toFixed(1)}} min </button>
+    <button class="RRbutton" role="button" (click)="checkDetails()">
+      <div class="wrapper">
+      <div class="firstdivrow">
+        <div class="firstdivcol date"><pre>{{item.activitydate}}</pre></div>
+        <div class="firstdivcol time"><pre>{{item.activitytime}}</pre></div>  
+      </div>
+      <div class="seconddivrow">
+        <div class="seconddivcol"><pre>Distance
+{{(item.distance/1000).toFixed(1)}} km </pre></div>
+        <div class="seconddivcol"><pre>Pacing
+{{(item.pacing*1000/60).toFixed(0)}}:{{((item.pacing*1000)%60).toFixed(0)}} /km</pre></div>
+        <div class="seconddivcol"><pre>duration
+{{(item.duration/60).toFixed(0)}}m {{(item.duration%60).toFixed(0)}}s</pre></div>
+      </div>
+    </div>
+    </button>
+  </div>
   </div>
 </ion-content>
