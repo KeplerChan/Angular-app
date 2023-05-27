@@ -2,13 +2,13 @@ import { Component, Input} from '@angular/core';
 import { Router } from '@angular/router';  
 
 @Component({
-  selector: 'apps4',
+  selector: 'app-s4',
   templateUrl: './s4.page.html',
   styleUrls: ['./s4.page.scss']
 })
 export class S4Page {
 
-  @Input() runningsummary = 'hi';
+  @Input() runningsummary ='1';
 
   constructor(private router: Router) { }
 

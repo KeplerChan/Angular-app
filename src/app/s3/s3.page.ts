@@ -27,12 +27,12 @@ export class S3Page implements OnInit {
       stri = this.gaussianRandom(1.1,0.5);
       let
       hour = now.toLocaleString('en-GB', {hour: '2-digit'}),
-      second = now.toLocaleString('en-GB', {second: '2-digit'}),
+      minute = now.toLocaleString('en-GB', {minute: '2-digit'}),
       ampm = (+hour >12) ? "pm" : "am", 
       hourn = (+hour >12) ? +hour - 12 : +hour;
       let nextrecord = {
       activitydate: this.formatDate(now),
-      activitytime: [hourn.toString(),second].join(":")+ampm,
+      activitytime: [hourn.toString(),minute].join(":")+ampm,
       distance:        dist, /* unit:meter*/
       duration:      dura, /* unit: second*/
       pacing:       dura/dist, /* unit:second per meter*/
