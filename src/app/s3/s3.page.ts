@@ -1,13 +1,14 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';  
 
 @Component({
-  selector: 's3',
+  selector: 'apps3',
   templateUrl: './s3.page.html',
-  styleUrls: ['./s3.page.scss'],
+  styleUrls: ['./s3.page.scss']
 })
 
 export class S3Page implements OnInit {
+  tele = "love";
   ob:Array<{
     activitydate: string,
     activitytime: string,
@@ -27,9 +28,11 @@ export class S3Page implements OnInit {
       let
       hour = now.toLocaleString('en-GB', {hour: '2-digit'}),
       second = now.toLocaleString('en-GB', {second: '2-digit'}),
-      nextrecord = {
+      ampm = (+hour >12) ? "pm" : "am", 
+      hourn = (+hour >12) ? +hour - 12 : +hour;
+      let nextrecord = {
       activitydate: this.formatDate(now),
-      activitytime: [hour,second].join(":"),
+      activitytime: [hourn.toString(),second].join(":")+ampm,
       distance:        dist, /* unit:meter*/
       duration:      dura, /* unit: second*/
       pacing:       dura/dist, /* unit:second per meter*/

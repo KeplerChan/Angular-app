@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -15,6 +15,7 @@ import { S3Page } from './s3.page';
     IonicModule,
     S3PageRoutingModule
   ],
-  declarations: [S3Page]
+  declarations: [S3Page],
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class S3PageModule {}
