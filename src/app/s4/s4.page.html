@@ -1,7 +1,33 @@
 <ion-header [translucent]="true">
-
+  <ion-toolbar>
+    <ion-title class="title">
+      Running Summary
+    </ion-title>
+  </ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true">
   <ion-button (click)="goBack()">Back</ion-button>
+
+  <div>
+      <div class="datetime date">2021/02/01</div>
+      <div class="datetime time">9:00am</div>  
+  </div>
+
+  <div>
+    <h3><u>Basic Info</u></h3>
+
+    <p><span class="param">Duration</span><span class="value">42m16s</span></p>
+    <p><span class="param">Distance</span><span class="value">8.1km</span></p>
+    <p><span class="param">Pacing</span><span class="value">5:45 /km</span></p>
+    <p><span class="param">Steps</span><span class="value">7583</span></p>
+    <p><span class="param">Calories</span><span class="value">723</span></p>
+    
+  </div>
+
+  <div>
+    <h3><u>Advanced Info</u></h3>
+    <p><span class="param">Stride</span><span class="value">1.22m</span></p>
+    <p><span class="param">Cadence</span><span class="value">172spm</span></p>
+  </div>
+
 </ion-content>

@@ -20,15 +20,13 @@ export class HomePage {
     }  
 
   login() {  
-    /*
-    if (this.username == "solos" && this.password == "pw123"){ */
+    if (this.username == "solos" && this.password == "pw123"){ 
       this.router.navigate(['s3']); 
-    /*
     }
     else{
       this.presentAlert();
     }
-    */
+    
   }
 
   async presentAlert() {

@@ -1,0 +1,25 @@
+.datetime{
+    display:inline-block;
+}
+
+.date{
+    text-align: left;
+    margin: 0 20px;
+}
+
+.time{
+    text-align: right;
+    margin: 0 20px;
+}
+
+.param{
+    position:relative;
+    right:0;
+
+}
+
+.value{
+    position:absolute;
+    right:0;
+
+}

@@ -19,18 +19,16 @@ export class S3Page implements OnInit {
     calories: number,
      cadence: number}>;
   constructor(private router: Router) {
-    console.log("hi")
     this.ob = Array(0).fill(null);
-    for (let i = 0; i < 10; i++) {    /*adjust the number of records here*/ 
+    for (let i = 0,now = new Date(); i < 30/*adjust the number of records here*/ ; i++) { 
       let dist = this.gaussianRandom(8100, 500), 
       dura = this.gaussianRandom(42*60+16,5*60), 
-      stri = this.gaussianRandom(1.1,0.5),
-      now = new Date();
+      stri = this.gaussianRandom(1.1,0.5);
       let
       hour = now.toLocaleString('en-GB', {hour: '2-digit'}),
       second = now.toLocaleString('en-GB', {second: '2-digit'}),
       nextrecord = {
-      activitydate: this.formatDate(),
+      activitydate: this.formatDate(now),
       activitytime: [hour,second].join(":"),
       distance:        dist, /* unit:meter*/
       duration:      dura, /* unit: second*/
@@ -41,6 +39,8 @@ export class S3Page implements OnInit {
       cadence:     dist/stri/dura /* unit:steps  per second*/
       } 
       this.ob = this.ob.concat(nextrecord)
+      now.setDate(now.getDate() - 1);
+
     }
   }
 
