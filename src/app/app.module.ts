@@ -8,12 +8,13 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { S3PageModule } from './s3/s3.module';
 import { HomePageModule } from './home/home.module';
+import { HomePage } from './home/home.page';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, 
     IonicModule.forRoot(), 
-    AppRoutingModule,
+    AppRoutingModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

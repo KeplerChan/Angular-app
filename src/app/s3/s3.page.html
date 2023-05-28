@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <p>{{ap}}</p>
+  <p>{{ap==''}}</p>
   <div class ="typesetting">
   <ion-button (click)="goBack()">Back</ion-button>
   <h1 class="numRecords"> Total records:{{ob.length}}</h1>
@@ -23,13 +23,13 @@
 {{(item.distance/1000).toFixed(1)}} km </pre></div>
         <div class="seconddivcol"><pre>Pacing
 {{(item.pacing*1000/60).toFixed(0)}}:{{ ("0"+((item.pacing*1000)%60).toFixed(0)).slice(-2) }} /km</pre></div>
-        <div class="seconddivcol"><pre>duration
+        <div class="seconddivcol"><pre>Duration
 {{(item.duration/60).toFixed(0)}}m {{(item.duration%60).toFixed(0)}}s</pre></div>
       </div>
     </div>
     </button>
   </div>
   </div>
-
+<app-s4 [rs]="ll"></app-s4>
 </ion-content>
 

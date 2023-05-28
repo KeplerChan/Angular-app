@@ -15,6 +15,7 @@ import { S4Page } from './s4.page';
     IonicModule,
     S4PageRoutingModule
   ],
-  declarations: [S4Page]
+  declarations: [S4Page],
+  exports:[S4Page]
 })
 export class S4PageModule {}

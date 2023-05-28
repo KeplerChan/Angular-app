@@ -7,9 +7,6 @@ import { IonicModule } from '@ionic/angular';
 import { S3PageRoutingModule } from './s3-routing.module';
 
 import { S3Page } from './s3.page';
-
-import { S4Page } from '../s4/s4.page';
-
 import { S4PageModule } from '../s4/s4.module';
 
 @NgModule({

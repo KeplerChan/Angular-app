@@ -12,7 +12,9 @@ export class S3Page implements OnInit {
 
 
   @Input()  ap = '';
-  
+
+  ll = "ok";
+
   ob:Array<{
     activitydate: string,
     activitytime: string,
@@ -24,7 +26,7 @@ export class S3Page implements OnInit {
     calories: number,
      cadence: number}>;
   constructor(private router: Router) {
-    console.log("AppComponent constructor");
+    console.log("s3 constructor");
     this.ob = Array(0).fill(null);
     for (let i = 0,now = new Date(); i < 30/*adjust the number of records here*/ ; i++) { 
       let dist = this.gaussianRandom(8100, 500), 
@@ -37,7 +39,7 @@ export class S3Page implements OnInit {
       hourn = (+hour >12) ? +hour - 12 : +hour;
       let nextrecord = {
       activitydate: this.formatDate(now),
-      activitytime: [hourn.toString(),minute].join(":")+ampm,
+      activitytime: [hourn.toString(),("0"+minute).slice(-2)].join(":")+ampm,
       distance:        dist, /* unit:meter*/
       duration:      dura, /* unit: second*/
       pacing:       dura/dist, /* unit:second per meter*/

@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./s4.page.scss']
 })
 export class S4Page {
-  @Input() rs: string ="a";
+  @Input() rs: string ='';
 
   constructor(private router: Router) { 
     console.log("s4 constructor");
