@@ -1,14 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';  
 
 @Component({
-  selector: 'apps3',
+  selector: 'app-s3',
   templateUrl: './s3.page.html',
   styleUrls: ['./s3.page.scss']
 })
 
 export class S3Page implements OnInit {
-  tele = "love";
+
+
+
+  @Input()  ap = '';
+  
   ob:Array<{
     activitydate: string,
     activitytime: string,
@@ -20,6 +24,7 @@ export class S3Page implements OnInit {
     calories: number,
      cadence: number}>;
   constructor(private router: Router) {
+    console.log("AppComponent constructor");
     this.ob = Array(0).fill(null);
     for (let i = 0,now = new Date(); i < 30/*adjust the number of records here*/ ; i++) { 
       let dist = this.gaussianRandom(8100, 500), 
@@ -64,12 +69,14 @@ export class S3Page implements OnInit {
     return z * stdev + mean;
   }
 
+
   ngOnInit() {
   }
   goBack() {  
     this.router.navigate(['home']);  
   } 
   checkDetails(){
+
     this.router.navigate(['s4'])
   }
 }

@@ -1,4 +1,4 @@
-import { Component, Input} from '@angular/core';
+import { Component, Input,OnInit } from '@angular/core';
 import { Router } from '@angular/router';  
 
 @Component({
@@ -7,10 +7,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./s4.page.scss']
 })
 export class S4Page {
+  @Input() rs: string ="a";
 
-  @Input() runningsummary ='1';
-
-  constructor(private router: Router) { }
+  constructor(private router: Router) { 
+    console.log("s4 constructor");
+    console.log(this.rs);
+  }
 
   goBack() {  
     this.router.navigate(['s3']);  

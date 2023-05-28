@@ -7,6 +7,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <p>{{ap}}</p>
   <div class ="typesetting">
   <ion-button (click)="goBack()">Back</ion-button>
   <h1 class="numRecords"> Total records:{{ob.length}}</h1>
@@ -29,5 +30,6 @@
     </button>
   </div>
   </div>
-  <app-s4 [runningsummary]="tele"></app-s4>
+
 </ion-content>
+
