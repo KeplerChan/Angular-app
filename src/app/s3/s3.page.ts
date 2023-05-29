@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';  
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'; 
+import { S4Page } from '../s4/s4.page'; 
 
 @Component({
   selector: 'app-s3',
@@ -9,13 +10,7 @@ import { Router } from '@angular/router';
 
 export class S3Page implements OnInit {
 
-
-
-  @Input()  ap = '';
-
-  ll = "ok";
-
-  ob:Array<{
+  runningRecords:Array<{
     activitydate: string,
     activitytime: string,
     distance: number,
@@ -27,11 +22,11 @@ export class S3Page implements OnInit {
      cadence: number}>;
   constructor(private router: Router) {
     console.log("s3 constructor");
-    this.ob = Array(0).fill(null);
+    this.runningRecords = Array(0).fill(null);
     for (let i = 0,now = new Date(); i < 30/*adjust the number of records here*/ ; i++) { 
       let dist = this.gaussianRandom(8100, 500), 
-      dura = this.gaussianRandom(42*60+16,5*60), 
-      stri = this.gaussianRandom(1.1,0.5);
+      dura = this.gaussianRandom(42*60+16,5*60),
+      step = this.gaussianRandom(7583, 200);
       let
       hour = now.toLocaleString('en-GB', {hour: '2-digit'}),
       minute = now.toLocaleString('en-GB', {minute: '2-digit'}),
@@ -43,12 +38,12 @@ export class S3Page implements OnInit {
       distance:        dist, /* unit:meter*/
       duration:      dura, /* unit: second*/
       pacing:       dura/dist, /* unit:second per meter*/
-      stride:     stri, /* unit:meter*/
-      steps:          dist/stri, /* unit: null*/
+      steps:          step, /* unit: null*/
+      stride:     dist/step, /* unit: meter*/
       calories:        723, /* kcal*/
-      cadence:     dist/stri/dura /* unit:steps  per second*/
+      cadence:     step/dura /* unit:steps  per second*/
       } 
-      this.ob = this.ob.concat(nextrecord)
+      this.runningRecords = this.runningRecords.concat(nextrecord)
       now.setDate(now.getDate() - 1);
 
     }
@@ -74,11 +69,23 @@ export class S3Page implements OnInit {
 
   ngOnInit() {
   }
-  goBack() {  
-    this.router.navigate(['home']);  
+  goBack() { 
+    const url = this.router.serializeUrl(this.router.createUrlTree(['home']));
+    window.open(url, '_self');
   } 
-  checkDetails(){
-
-    this.router.navigate(['s4'])
+  checkDetails(i:number){
+    const url = this.router.serializeUrl(this.router.createUrlTree(['s4'], { 
+      queryParams: { 
+        activitydate: this.runningRecords[i].activitydate,
+        activitytime: this.runningRecords[i].activitytime ,
+        distance: this.runningRecords[i].distance,
+        duration: this.runningRecords[i].duration,
+        pacing: this.runningRecords[i].pacing,
+        stride: this.runningRecords[i].stride,
+        steps: this.runningRecords[i].steps,
+        calories: this.runningRecords[i].calories,
+        cadence: this.runningRecords[i].cadence} }));
+    window.open(url, '_self');
+    /*this.router.navigate(['s4']);*/
   }
 }

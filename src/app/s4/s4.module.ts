@@ -1,4 +1,4 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA , NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -15,7 +15,6 @@ import { S4Page } from './s4.page';
     IonicModule,
     S4PageRoutingModule
   ],
-  declarations: [S4Page],
-  exports:[S4Page]
+  declarations: [S4Page]
 })
 export class S4PageModule {}

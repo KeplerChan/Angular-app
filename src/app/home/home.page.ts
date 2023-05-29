@@ -20,8 +20,10 @@ export class HomePage {
     }  
 
   login() {  
+    
     if (this.username == "solos" && this.password == "pw123"){ 
-      this.router.navigate(['s3']); 
+      const url = this.router.serializeUrl(this.router.createUrlTree(['s3']));
+      window.open(url, '_self');
     
     }
     

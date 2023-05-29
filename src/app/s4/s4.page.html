@@ -16,20 +16,20 @@
   <div>
     <h3><u>Basic Info</u></h3>
 
-    <p><span class="param">Duration</span><span class="value">42m16s</span></p>
-    <p><span class="param">Distance</span><span class="value">8.1km</span></p>
-    <p><span class="param">Pacing</span><span class="value">5:45 /km</span></p>
-    <p><span class="param">Steps</span><span class="value">7583</span></p>
-    <p><span class="param">Calories</span><span class="value">723</span></p>
+    <p><span class="param">Duration</span><span class="value">{{(duration/60).toFixed(0)}}m {{(duration%60).toFixed(0)}}s</span></p>
+    <p><span class="param">Distance</span><span class="value">{{(distance/1000).toFixed(1)}}</span></p>
+    <p><span class="param">Pacing</span><span class="value">{{(pacing*1000/60).toFixed(0)}}:{{ ("0"+((pacing*1000)%60).toFixed(0)).slice(-2) }} /km</span></p>
+    <p><span class="param">Steps</span><span class="value">{{steps}}</span></p>
+    <p><span class="param">Calories</span><span class="value">{{calories}}</span></p>
     
   </div>
 
   <div>
     <h3><u>Advanced Info</u></h3>
-    <p><span class="param">Stride</span><span class="value">1.22m</span></p>
-    <p><span class="param">Cadence</span><span class="value">172spm</span></p>
+    <p><span class="param">Stride</span><span class="value">{{stride}}m</span></p>
+    <p><span class="param">Cadence</span><span class="value">{{(cadence*60).toFixed(0)}}spm</span></p>
   </div>
 
-  <h1>{{rs==''}}</h1>
+
 
 </ion-content>

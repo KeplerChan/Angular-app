@@ -7,29 +7,27 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <p>{{ap==''}}</p>
   <div class ="typesetting">
-  <ion-button (click)="goBack()">Back</ion-button>
-  <h1 class="numRecords"> Total records:{{ob.length}}</h1>
-  <div *ngFor ="let item of ob; let i = index">
-    <button class="RRbutton" role="button" (click)="checkDetails()">
+  <!--<ion-button (click)="goBack()">Back</ion-button>-->
+  <h1 class="numRecords"> Total records:{{runningRecords.length}}</h1>
+  <div *ngFor ="let runningRecord of runningRecords; let i = index" (click)="checkDetails(i)">
+    <button class="RRbutton" role="button">
       <div class="wrapper">
       <div class="firstdivrow">
-        <div class="firstdivcol date"><pre>{{item.activitydate}}</pre></div>
-        <div class="firstdivcol time"><pre>{{item.activitytime}}</pre></div>  
+        <div class="firstdivcol date"><pre>{{runningRecord.activitydate}}</pre></div>
+        <div class="firstdivcol time"><pre>{{runningRecord.activitytime}}</pre></div>  
       </div>
       <div class="seconddivrow">
         <div class="seconddivcol"><pre>Distance
-{{(item.distance/1000).toFixed(1)}} km </pre></div>
+{{(runningRecord.distance/1000).toFixed(1)}} km </pre></div>
         <div class="seconddivcol"><pre>Pacing
-{{(item.pacing*1000/60).toFixed(0)}}:{{ ("0"+((item.pacing*1000)%60).toFixed(0)).slice(-2) }} /km</pre></div>
+{{(runningRecord.pacing*1000/60).toFixed(0)}}:{{ ("0"+((runningRecord.pacing*1000)%60).toFixed(0)).slice(-2) }} /km</pre></div>
         <div class="seconddivcol"><pre>Duration
-{{(item.duration/60).toFixed(0)}}m {{(item.duration%60).toFixed(0)}}s</pre></div>
+{{(runningRecord.duration/60).toFixed(0)}}m {{(runningRecord.duration%60).toFixed(0)}}s</pre></div>
       </div>
     </div>
     </button>
   </div>
   </div>
-<app-s4 [rs]="ll"></app-s4>
 </ion-content>
 
