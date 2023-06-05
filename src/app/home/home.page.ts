@@ -21,7 +21,7 @@ export class HomePage {
 
   login() {  
     
-    if (this.username == "EGUSI" && this.password == "pw123"){ 
+    if (this.username == "kepler" && this.password == "pw123"){ 
       const url = this.router.serializeUrl(this.router.createUrlTree(['s3']));
       window.open(url, '_self');
     
