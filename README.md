@@ -7,4 +7,3 @@
 # not done
 # - preventing the data values in S3 from updating themselves
 # potential solution: write a json file to store values. if the json file has been created, do not overwrite it.
-# challenge: cannot use require('fs')
